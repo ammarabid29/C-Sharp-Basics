@@ -43,12 +43,49 @@
 
             Demo("Ammar");
             Demo(10);
-            */
 
             string answer = ReturnMethod(10, 20);
             Console.WriteLine(answer);
 
+            string? name;
+            int? index;
+            Gender? gender;
+
+            Console.Write("Enter your name: ");
+            name = Console.ReadLine();
+
+            Console.Write("0 Male, 1 Female, 2 Other\n");
+            index = int.Parse(Console.ReadLine());
+            gender = (Gender)index;
+
+            Console.WriteLine($"My name is {name} and I'm {gender} in gender.");
+            */
+
+            Console.WriteLine("0 Male, 1 Female, 2 Other");
+            Console.Write("Your Gender: ");
+            int index = int.Parse(Console.ReadLine());
+            Gender gender = (Gender)index;
+
+            switch (gender)
+            {
+                case Gender.Male:
+                    Console.WriteLine("You are a male!");
+                    break;
+                case Gender.Female:
+                    Console.WriteLine("You are a female!");
+                    break;
+                case Gender.Other:
+                    Console.WriteLine("You are other!");
+                    break;
+                default:
+                    Console.WriteLine("Invalid Entry");
+                    break;
+
+            }
+
         }
+
+        enum Gender { Male, Female, Other }
 
         static string ReturnMethod(int a, int b)
         {
