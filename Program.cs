@@ -4,6 +4,51 @@
     {
         static void Main()
         {
+            int age;
+            Console.Write("Enter your age: ");
+            string? input = Console.ReadLine();
+            if (input != null)
+            {
+                age = int.Parse(input);
+                Console.WriteLine($"You are {age + 1} years old.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input.");
+            }
+
+            int check = 1;
+            do
+            {
+                Console.WriteLine(check);
+                check++;
+            }
+            while (check <= 5);
+
+            string message =(2<4)?"Valid message":"Invalid message";
+            Console.WriteLine(message);
+
+            string? select;
+            Console.Write("Enter a number b/w 1-3: ");
+            select = Console.ReadLine();
+
+            switch (select)
+            {
+                case "1":
+                    Console.WriteLine("You selected 1.");
+                    break;
+                case "2":
+                    Console.WriteLine("You selected 2.");
+                    break;
+                case "3":
+                    Console.WriteLine("You selected 3.");
+                    break;
+                default:
+                    Console.WriteLine("Invalid selection.");
+                    break;
+            }
+
+
             var p1 = new Person(
                 "Ammar",
                 "Abid",
@@ -35,6 +80,7 @@
             public string LastName { get; } = lastName;
             public DateOnly Birthday { get; } = birthday;
             public List<Pet> Pets { get; } = [];
+
             public override string ToString()
             {
                 return $"Person: {FirstName} {LastName}";
@@ -44,6 +90,7 @@
         public abstract class Pet(string name)
         {
             public string Name { get; } = name;
+
             public abstract string MakeNoise();
             public override string ToString()
             {
