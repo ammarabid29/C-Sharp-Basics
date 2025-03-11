@@ -1,9 +1,29 @@
 ﻿namespace CSharpBasics
 {
+
+    struct Student
+    {
+        public int age;
+        public string name;
+
+        public readonly void Display()
+        {
+            Console.WriteLine($"Name: {name}, Age: {age}");
+        }
+    }
+
     class Program
     {
         static void Main()
         {
+            Student student = new()
+            {
+                name = "Ammar",
+                age = 23,
+            };
+
+            student.Display();
+
             /*
             var name = "Ammar";
             Console.WriteLine(name);
@@ -59,8 +79,7 @@
             gender = (Gender)index;
 
             Console.WriteLine($"My name is {name} and I'm {gender} in gender.");
-            */
-
+           
             Console.WriteLine("0 Male, 1 Female, 2 Other");
             Console.Write("Your Gender: ");
             int index = int.Parse(Console.ReadLine());
@@ -82,8 +101,11 @@
                     break;
 
             }
+            */
 
         }
+
+
 
         enum Gender { Male, Female, Other }
 
