@@ -27,6 +27,10 @@
             PassByReference(ref value2);
             Console.WriteLine($"MainValue: {value2}");
 
+            int value3;
+            PassByOut(out value3);
+            Console.WriteLine($"MainValue: {value3}");
+
         }
 
 
@@ -39,6 +43,12 @@
         static void PassByReference(ref int myValue)
         {
             myValue += 5;
+            Console.WriteLine($"MyValue: {myValue}");
+        }
+
+        static void PassByOut(out int myValue)
+        {
+            myValue = 10;
             Console.WriteLine($"MyValue: {myValue}");
         }
 
