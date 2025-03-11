@@ -17,20 +17,41 @@
             //Console.WriteLine(age);
             //Console.WriteLine(age.GetType());
 
-            //MyMethod(5, "Ammar");
+            //MyMethod("Ammar");
+            //MyMethod("Ali", 5);
 
-            int value1 = 10;
-            PassByValue(value1);
-            Console.WriteLine($"MainValue: {value1}");
+            //int value1 = 10;
+            //PassByValue(value1);
+            //Console.WriteLine($"MainValue: {value1}");
 
-            int value2 = 10;
-            PassByReference(ref value2);
-            Console.WriteLine($"MainValue: {value2}");
+            //int value2 = 10;
+            //PassByReference(ref value2);
+            //Console.WriteLine($"MainValue: {value2}");
 
-            int value3;
-            PassByOut(out value3);
-            Console.WriteLine($"MainValue: {value3}");
+            //int value3;
+            //PassByOut(out value3);
+            //Console.WriteLine($"MainValue: {value3}");
 
+            //Array is always passed as reference so its value will be changed in the main method as well
+            int[] array = { 1, 2, 3, 4, 5 };
+            MyArrayMethod(array);
+            foreach (var number in array)
+            {
+                Console.WriteLine(number);
+            }
+        }
+
+        static void MyArrayMethod(params int[] myArray)
+        {
+            for(int i = 0; i < myArray.Length; i++)
+            {
+                myArray[i] += 2;
+            }
+
+            foreach (var number in myArray)
+            {
+                Console.WriteLine(number);
+            }
         }
 
 
@@ -52,7 +73,7 @@
             Console.WriteLine($"MyValue: {myValue}");
         }
 
-        static void MyMethod(int length, string message)
+        static void MyMethod( string message, int length = 2)
         {
             for (int i = 0; i < length; i++)
             {
