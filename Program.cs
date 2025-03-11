@@ -16,6 +16,7 @@
     {
         static void Main()
         {
+            /*
             Student student = new()
             {
                 name = "Ammar",
@@ -23,8 +24,7 @@
             };
 
             student.Display();
-
-            /*
+            
             var name = "Ammar";
             Console.WriteLine(name);
             Console.WriteLine(name.GetType());
@@ -103,9 +103,24 @@
             }
             */
 
+            //static is called through class 
+            Program.Show();
+
+            //non-static is called through class-object
+            Program program = new();
+            program.Display();
+
         }
 
+        void Display()
+        {
+            Console.WriteLine("Hello Ammar!");
+        }
 
+        static void Show()
+        {
+            Console.WriteLine("Hello World!");
+        }
 
         enum Gender { Male, Female, Other }
 
