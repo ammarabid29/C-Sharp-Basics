@@ -4,33 +4,34 @@
     {
         static void Main()
         {
-            //var name = "Ammar";
-            //Console.WriteLine(name);
-            //Console.WriteLine(name.GetType());
+            /*
+            var name = "Ammar";
+            Console.WriteLine(name);
+            Console.WriteLine(name.GetType());
 
-            ////determine datatype on runtime 
-            //dynamic age = 10;
-            //Console.WriteLine(age);
-            //Console.WriteLine(age.GetType());
+            //determine datatype on runtime 
+            dynamic age = 10;
+            Console.WriteLine(age);
+            Console.WriteLine(age.GetType());
 
-            //age = "Ten";
-            //Console.WriteLine(age);
-            //Console.WriteLine(age.GetType());
+            age = "Ten";
+            Console.WriteLine(age);
+            Console.WriteLine(age.GetType());
 
-            //MyMethod("Ammar");
-            //MyMethod("Ali", 5);
+            MyMethod("Ammar");
+            MyMethod("Ali", 5);
 
-            //int value1 = 10;
-            //PassByValue(value1);
-            //Console.WriteLine($"MainValue: {value1}");
+            int value1 = 10;
+            PassByValue(value1);
+            Console.WriteLine($"MainValue: {value1}");
 
-            //int value2 = 10;
-            //PassByReference(ref value2);
-            //Console.WriteLine($"MainValue: {value2}");
+            int value2 = 10;
+            PassByReference(ref value2);
+            Console.WriteLine($"MainValue: {value2}");
 
-            //int value3;
-            //PassByOut(out value3);
-            //Console.WriteLine($"MainValue: {value3}");
+            int value3;
+            PassByOut(out value3);
+            Console.WriteLine($"MainValue: {value3}");
 
             //Array is always passed as reference so its value will be changed in the main method as well
             int[] array = { 1, 2, 3, 4, 5 };
@@ -39,11 +40,30 @@
             {
                 Console.WriteLine(number);
             }
+
+            Demo("Ammar");
+            Demo(10);
+            */
+
+            string answer = ReturnMethod(10, 20);
+            Console.WriteLine(answer);
+
+        }
+
+        static string ReturnMethod(int a, int b)
+        {
+            return $"Result: {a + b}";
+        }
+
+        static void Demo(dynamic name)
+        {
+            Console.WriteLine(name);
+            Console.WriteLine(name.GetType());
         }
 
         static void MyArrayMethod(params int[] myArray)
         {
-            for(int i = 0; i < myArray.Length; i++)
+            for (int i = 0; i < myArray.Length; i++)
             {
                 myArray[i] += 2;
             }
@@ -73,7 +93,7 @@
             Console.WriteLine($"MyValue: {myValue}");
         }
 
-        static void MyMethod( string message, int length = 2)
+        static void MyMethod(string message, int length = 2)
         {
             for (int i = 0; i < length; i++)
             {
